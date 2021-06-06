@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body>
+    <div class="mainWrapper">
+        <div class="navigation"> 
+          <div class="checkNavigation">
+            <form>
+                <div class="multiselect">
+                  <div class="selectBox" onclick="showCheckboxesGenre()">
+                    <select>
+                      <option>Жанр</option>
+                    </select>
+                    <div class="overSelect"></div>
+                  </div>
+                  <div id="checkboxesGenre">
+                    <label for="one">
+                      <input type="checkbox" id="one" value="Ужасы" class="genre"/>Ужасы</label>
+                    <label for="two">
+                      <input type="checkbox" id="two" value="Мелодрама" class="genre"/>Мелодрама</label>
+                    <label for="three">
+                      <input type="checkbox" id="three" value="Драма" class="genre"/>Драма</label>
+                    <label for="forth">
+                      <input type="checkbox" id="forth" value="Детектив" class="genre"/>Детектив</label>
+                    <label for="five">
+                      <input type="checkbox" id="five" value="Вестерн" class="genre"/>Вестерн</label>
+                    <label for="six">
+                      <input type="checkbox" id="six" value="Боевик" class="genre"/>Боевик</label>
+                  </div>
+                </div>
+              </form>
+
+              <form>
+                <div class="multiselect">
+                  <div class="selectBox" onclick="showCheckboxesCountry()">
+                    <select>
+                      <option>Страна</option>
+                    </select>
+                    <div class="overSelect"></div>
+                  </div>
+                  <div id="checkboxesCountry">
+                    <label for="one">
+                      <input type="checkbox" id="one" value="США" class="country"/>США</label>
+                    <label for="two">
+                      <input type="checkbox" id="two" value="Россия" class="country"/>Россия</label>
+                    <label for="three">
+                      <input type="checkbox" id="three" value="Германия" class="country"/>Германия</label>
+                    <label for="forth">
+                      <input type="checkbox" id="forth" value="Франция" class="country"/>Франция</label>
+                    <label for="five">
+                      <input type="checkbox" id="five" value="Италия" class="country"/>Италия</label>
+                    <label for="six">
+                      <input type="checkbox" id="six" value="Китай" class="country"/>Китай</label>
+                    <label for="seven">
+                      <input type="checkbox" id="seven" value="Япония" class="country"/>Япония</label>
+                  </div>
+                </div>
+              </form>
+
+              <form>
+                <div class="multiselect">
+                  <div class="selectBox" onclick="showCheckboxesYear()">
+                    <select>
+                      <option>Год</option>
+                    </select>
+                    <div class="overSelect"></div>
+                  </div>
+                  <div id="checkboxesYear">
+                    <label for="one">
+                      <input type="checkbox" id="one" value="2021" class="year"/>2021</label>
+                    <label for="two">
+                      <input type="checkbox" id="two" value="2020" class="year"/>2020</label>
+                    <label for="three">
+                      <input type="checkbox" id="three" value="2019" class="year"/>2019</label>
+                    <label for="forth">
+                      <input type="checkbox" id="forth" value="2018" class="year"/>2018</label>
+                    <label for="five">
+                      <input type="checkbox" id="five" value="2017" class="year"/>2017</label>
+                    <label for="six">
+                      <input type="checkbox" id="six" value="2016" class="year"/>2016</label>
+                    <label for="seven">
+                      <input type="checkbox" id="seven" value="2015" class="year"/>2015</label>
+                    <label for="eight">
+                      <input type="checkbox" id="eight" value="2014" class="year"/>2014</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div id="upImg">
+                <img src="greeting.png" alt="HI" id="imgGreeatingUp">
+            </div>
+
+            <div class="mainButtonNavigation">
+                <a href="#" class="button" id="formBtn">
+                    <span class="button__line button__line--top"></span>
+                    <span class="button__line button__line--right"></span>
+                    <span class="button__line button__line--bottom"></span>
+                    <span class="button__line button__line--left"></span>
+                   <p class="pButton"> Создать карточку</p>
+                </a>
+
+                <a href="#" class="button2" id="showAllBtn">
+                        <span class="button__line2 button__line2--top2"></span>
+                        <span class="button__line2 button__line2--right2"></span>
+                        <span class="button__line2 button__line2--bottom2"></span>
+                        <span class="button__line2 button__line2--left2"></span>
+                       <p class="pButton"> Все фильмы</p>
+                </a>
+                
+            </div>
+
+        </div>
+
+        <div class="greeting">
+            <div id="greetingImg" >
+                <img src="greeting.png" alt="HI" id="imgGreeating">
+            </div>
+            <div  id="greetingText">
+                <p>Создай свою собственную коллекцию фильмов</p>
+            </div>
+        </div>
+
+        <div id="component"></div>
+        <output id="list"></output>
+
+        <div class="formForFilm" id="formForFilmId">
+            <div class="popup-content">
+                <div class="popup-header">
+            <span class="close">&times;</span>
+        </div>
+            <div class="popup-body">
+            <form action="" id="formForMovies" name="FORM">
+                <!-- <p>Заполните форму.</p> -->
+                <p>Введите название фильма</p>
+                <input type="text" placeholder="Название" id="Name" required class="valueOfInputs" pattern="^[\sA-Za-zА-Яа-яЁё0-9]+$" maxlength="70">
+                <p id="NameInput" class="inputs">(Значение не соответствует буквенному или численному,  или вовсе не указано)</p>
+
+                <p>Введите страну происхождения фильма</p>
+                <input type="text" placeholder="Страна" id="Country" required pattern="^[A-Za-zА-Яа-яЁё]+$" class="valueOfInputs" maxlength="70">
+                <p id="CountryInput" class="inputs">(Значение не соответствует буквенному или не указано)</p>
+
+                <p>Введите жанр фильма</p>
+                <input type="text" placeholder="Жанр" id="Genry" required pattern="^[A-Za-zА-Яа-яЁё]+$" class="valueOfInputs" maxlength="70">
+                <p id="GenryInput" class="inputs">(Значение не соответствует буквенному или не указано)</p>
+
+                <p>Введите режисера фильма</p>
+                <input type="text" placeholder="Режисер" id="Creator" required pattern="^[\sA-Za-zА-Яа-яЁё]+$" class="valueOfInputs" maxlength="70">
+                <p id="CreatorInput" class="inputs">(Значение не соответствует буквенному или не указано)</p>
+
+                <p>Введите сценариста фильма</p>
+                <input type="text" placeholder="Сценарист" id="Screenwriter" required pattern="^[\sA-Za-zА-Яа-яЁё]+$" class="valueOfInputs" maxlength="70">
+                <p id="ScreenwriterInput" class="inputs">(Значение не соответствует буквенному или не указано)</p>
+
+                <p>Введите продюсера фильма</p>
+                <input type="text" placeholder="Продюсер" id="Producer" required pattern="^[\sA-Za-zА-Яа-яЁё]+$" class="valueOfInputs" maxlength="70">
+                <p id="ProducerInput" class="inputs">(Значение не соответствует буквенному или не указано)</p>
+
+                <p>Введите оператора фильма</p>
+                <input type="text" placeholder="Оператор" id="Operator" required pattern="^[\sA-Za-zА-Яа-яЁё]+$" class="valueOfInputs" maxlength="70">
+                <p id="OperatorInput" class="inputs">(Значение не соответствует буквенному или не указано)</p>
+                
+                <p>Введите композитора фильма</p>
+                <input type="text" placeholder="Композитор" id="Compose" required pattern="^[\sA-Za-zА-Яа-яЁё]+$" class="valueOfInputs" maxlength="70">
+                <p id="ComposeInput" class="inputs">(Значение не соответствует буквенному или не указано)</p>
+                                
+                <p>Введите бюджет фильма в $</p>
+                <input type="text" placeholder="Бюджет" id="Budget" required pattern="^[ 0-9]+$" maxlength="20" class="valueOfInputs">
+                <p id="BudgetInput" class="inputs">(Значение не соответствует числовому или не указано)</p>
+                                                
+                <p>Введите мировые кассовые сборы фильма в $</p>
+                <input type="text" placeholder="Мировые кассовые сборы" id="Casier" required pattern="^[ 0-9]+$" class="valueOfInputs" maxlength="70">
+                <p id="CasierInput" class="inputs">(Значение не соответствует числовому или не указано)</p>
+                                                                
+                <p>Введите ограничение по возрасту фильма</p>
+                <input type="text" placeholder="Ограничение по возрасту" id="Limit" required pattern="^[ 0-9]+$" class="valueOfInputs" maxlength="2">
+                <p id="LimitInput" class="inputs">(Значение не соответствует числовому или не указано)</p>
+                                                                                
+                <p>Введите длительность фильма</p>
+                <input type="text" placeholder="Длительность" id="Way" required pattern="^[ 0-9]+$" class="valueOfInputs" maxlength="30">
+                <p id="WayInput" class="inputs">(Значение не соответствует числовому или не указано)</p>
+                                                                                                
+                <p>Введите год выхода фильма</p>
+                <input type="text" placeholder="Дата выхода" id="Date" required pattern="^[ 0-9]{4}" class="valueOfInputs" maxlength="4">
+                <p id="DateInput" class="inputs">(Введите четырехзначное число. Значение не соответствует числовому или не указано)</p>
+                                                                                                                
+                <p>Приложите постер фильма</p>
+                <input type="file" placeholder="Постер" name="files" id="imgPoster" required accept="image/jpeg,image/png" class="valueOfInputs">
+                <p id="imgPosterInput" class="inputs">Файл не указан</p>
+                <p></p>
+                <input type="submit" value="Создать" id="submitButton"><!--onclick="add()"-->
+            </form>
+        </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="script.js"></script>
+</body>
+<footer><div></div></footer>
+</html>

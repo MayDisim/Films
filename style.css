@@ -1,0 +1,611 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'DejaVu Sans Mono', monospace;
+}
+
+.mainWrapper{
+    
+    width: 75%;
+   /* height: 100vh;*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Главная картинка сайта*/
+.greeting{
+    margin-top: 90px;
+    display: block;
+    
+    
+}
+#imgGreeating{
+    box-shadow: 0px 0px 400px 400px rgba(23, 176, 236, 0.185);
+    border-radius: 50%;
+    -webkit-transition: 2s ease;
+
+}
+#imgGreeating:hover{
+    box-shadow: 0px 0px 250px 250px rgba(169, 138, 241, 0.322);
+    border-radius: 50%;
+    transition:1s;
+    transition-delay: 0.2s;
+}
+#greetingImg{
+    display: flex;
+    justify-content: center;
+}
+#greetingText{
+    display: flex;
+    justify-content: center;
+}
+#imgGreeating{
+    width: 300px;
+}
+#greetingText{
+    color: white;
+    font-size: 26px;
+}
+
+/*Навигация по фильмам,*/
+a{
+    color: #3fc4ff;
+    text-decoration: none;
+}
+
+.checkNavigation{
+    display: flex;
+    border-bottom: 1px solid rgb(178, 189, 192);
+}
+.multiselect {
+    width: 100%;
+    
+    
+  }
+  
+  .selectBox {
+    position: relative;
+    margin-right: 25px;
+   
+  }
+  .navigation form{
+      height: 25px;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-right: 20px;
+  }
+  .selectBox select {
+    width: 100%;
+    font-weight: bold;
+    background: transparent;
+    border: solid 0;
+    color: #3fc4ff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+
+  }
+  
+  .overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  #checkboxesGenre,#checkboxesYear,#checkboxesCountry {
+    display: none;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgb(178, 189, 192);
+    color:#3fc4ff;
+    font-size: 16px;
+    overflow-y: scroll;
+    height: 200px;
+    z-index: 5;
+    position: relative;
+  }
+  
+  #checkboxesGenre label {
+    display: block;
+    padding: 10px 5px 10px 1px;
+  }
+  /*
+  #checkboxesGenre label:hover {
+    color: rgba(255, 255, 255, 0.753);
+    transition: 1s;
+    -webkit-transition: 1s ease;
+   
+  }*/
+
+ 
+  #checkboxesYear label {
+    display: block;
+    padding: 10px 5px 10px 1px;
+  }
+  /*
+  #checkboxesYear label:hover {
+    color: rgba(255, 255, 255, 0.753);
+    transition: 1s;
+    -webkit-transition: 1s ease;
+    transition-delay: 0.2s;
+  }*/
+
+  
+  #checkboxesCountry label {
+    display: block;
+    padding: 10px 5px 10px 1px;
+  }
+  /*
+  #checkboxesCountry label:hover {
+    color: rgba(255, 255, 255, 0.753);
+    transition: 1s;
+    -webkit-transition: 1s ease;
+    transition-delay: 0.2s;
+  }*/
+
+.navigation{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 400;
+}
+.mainButtonNavigation {
+    display: flex;
+    
+    border-bottom: 1px solid rgb(178, 189, 192);
+    
+}
+.mainButtonNavigation>div{
+    margin-left: 50px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(119, 129, 219, 0.685); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(119, 129, 219, 0.685); 
+}
+
+
+/*butttons*/
+.button{
+    position: relative;
+    color: #4aa9f7;
+    padding: 5px 10px;
+    overflow: hidden;
+    transition: 0.2s;
+  
+    
+}
+.button__line{
+    position: absolute;
+    display: block;
+
+}
+.button__line--top{
+    top: 0;
+    height: 2px;
+    left: -100%;
+    width: 100%;
+    color: #4aa9f7;
+    background:linear-gradient(90deg,transparent,#4aa9f7);
+}
+.button:hover .button__line--top{
+   
+    left: 100%;
+    transition:1s;
+    transition-delay: 0.2s;
+}
+
+.button__line--bottom{
+    bottom: 0;
+    height: 2px;
+    right: -100%;
+    width: 100%;
+    color: #4aa9f7;
+    background:linear-gradient(270deg,transparent,#4aa9f7);
+}
+.button:hover .button__line--bottom{
+   
+    right: 100%;
+    transition:1s;
+    transition-delay: 0.2s;
+}
+.button__line--right{
+    right: 0;
+    height: 100%;
+    top: -100%;
+    width: 2px;
+    color: #4aa9f7;
+    background:linear-gradient(180deg,transparent,#4aa9f7);
+}
+.button:hover .button__line--right{
+   
+    top: 100%;
+    transition:1s;
+    transition-delay: 0;
+}
+.button__line--left{
+    left: 0;
+    height: 100%;
+    bottom: -100%;
+    width: 2px;
+    color: #4aa9f7;
+    background:linear-gradient(90deg,transparent,#4aa9f7);
+}
+.button:hover .button__line--left{
+   
+    bottom: 100%;
+    transition:1s;
+    transition-delay: 0s;
+}
+.button:hover{
+    box-shadow: 0 0 10px #4aa9f7, 0 0 40px  #4aa9f7,0 0 80px #4aa9f7;
+    background-color:  #4aa9f7;
+    transition-delay: 0.4s;
+    color: black;
+}
+/*2*/
+.button2{
+    margin-left: 30px;
+    position: relative;
+    color: #4aa9f7;
+    padding: 5px 10px;
+    overflow: hidden;
+    transition: 0.2s;
+    
+    
+}
+.button__line2{
+    position: absolute;
+    display: block;
+
+}
+.button__line2--top2{
+    top: 0;
+    height: 2px;
+    left: -100%;
+    width: 100%;
+    color: #4aa9f7;
+    background:linear-gradient(90deg,transparent,#4aa9f7);
+}
+.button2:hover .button__line2--top2{
+   
+    left: 100%;
+    transition:1s;
+    transition-delay: 0.2s;
+}
+
+.button__line2--bottom2{
+    bottom: 0;
+    height: 2px;
+    right: -100%;
+    width: 100%;
+    color: #4aa9f7;
+    background:linear-gradient(270deg,transparent,#4aa9f7);
+}
+.button2:hover .button__line2--bottom2{
+   
+    right: 100%;
+    transition:1s;
+    transition-delay: 0.2s;
+}
+.button__line2--right2{
+    right: 0;
+    height: 100%;
+    top: -100%;
+    width: 2px;
+    color: #4aa9f7;
+    background:linear-gradient(180deg,transparent,#4aa9f7);
+}
+.button2:hover .button__line2--right2{
+   
+    top: 100%;
+    transition:1s;
+    transition-delay: 0;
+}
+.button__line2--left2{
+    left: 0;
+    height: 100%;
+    bottom: -100%;
+    width: 2px;
+    color: #4aa9f7;
+    background:linear-gradient(90deg,transparent,#4aa9f7);
+}
+.button2:hover .button__line2--left2{
+   
+    bottom: 100%;
+    transition:1s;
+    transition-delay: 0s;
+}
+.button2:hover{
+    box-shadow: 0 0 10px #4aa9f7, 0 0 40px  #4aa9f7,0 0 80px #4aa9f7;
+    background-color:  #4aa9f7;
+    transition-delay: 0.4s;
+    color: black;
+}
+
+/*form*/
+.formForFilm{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding-top: 35px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    font-family: 'DejaVu Sans Mono', monospace;
+}
+
+
+  .close{
+    color: #aaa;
+    font-size: 28px;
+    margin-left: auto;
+  }
+  .close:hover,
+  .close:focus{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+.popup-content{
+    margin-top: 20px;
+    position: relative;
+    background: linear-gradient(to top left,powderblue , #69a5d6);
+    padding: 0;
+    margin: auto;
+    /*border: 1px solid #888;*/
+    border-radius: 20px;
+    width: 45%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    /*animation-name: animatetor;
+    animation-direction: 0.4s;*/
+  }
+  .popup-body{
+    
+    padding:  3px 16px;
+    font-size: 18px;
+    color: black;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .popup-header{
+    /*background-color: #FFE9E9;*/
+    color: #918e8e;
+    padding: 3px 16px;
+    display: flex;
+    padding-left: 5%;
+    font-size: 13px;
+    
+  }
+
+  form>input{
+      width: 80%;
+      margin-bottom: 30px;
+      background: none;
+      border: none;
+      border-bottom: 3px solid white;
+      outline: none;
+      color: black;
+      
+  }
+  form>input:focus{
+    
+    transition: 2s;
+    border-bottom: 3px solid black;
+}
+
+/*cards*/
+#component>div{
+    background-color: black;
+    border-radius: 8px;
+    margin: 30px;
+}
+#component{
+    width: 100%;
+    height: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   flex-direction: row;
+   margin: auto;
+
+}
+
+#submitButton{
+    margin-bottom: 100px;
+    font-family: "Lucida Console", monospace;
+	background-color: #4c4177;
+	background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
+	color: white;
+    border:none;
+    position:relative;
+    height:40px;
+    font-size:16px;
+    margin-top: 24px;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+
+.thumb {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-radius: 8px;
+    
+}
+
+.innerComponent{
+    display: table-column;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 550px;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(209, 205, 245, 0.829);
+    transition: 1s;
+}
+.classforImg{
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    width: 250px;
+    height: 300px;
+    transition: 1s;
+}
+
+
+.innerComponent:hover .componentAfterImg{
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    transition: 1s;
+    
+}
+
+.innerComponent:hover .classforImg{
+ filter: blur(20px);
+ transition: 1s;
+ -webkit-transition: all 1.5s;
+ opacity: 0.5;
+}
+
+.innerComponent:hover{
+    box-shadow: 0 0 100px #69a5d685;
+    transition: 1s;
+}
+
+.componentAfterImg{
+    position: absolute;
+    height: 100px;
+    
+    
+}
+.componentAfterImg>p{
+    /* text-align: center;
+   justify-content: center;*/
+    transition: 1s;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(185, 182, 182);
+
+}
+
+.componentAfterImg p:first-child{
+
+    font-size: 19px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    color: rgba(255, 255, 255, 0.842);
+}
+
+.innerComponent:hover .componentAfterImg p:first-child{
+    padding-top: 10px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+.deleteButtonForCard{
+    display: block;
+    width: 10px;
+    height: 15px;
+    margin:  auto;
+    bottom: 0;
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.deleteButtonForCard:hover{
+    color: #3fc5ffc4;
+    transition: 1s;
+   
+}
+.deleteButtonForVideo{
+    position: fixed;
+    display: block;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    top: 10px;
+    color: white;
+    font-size: 35px;
+    font-weight: 900;
+    z-index: 5;
+}
+
+.deleteButtonForVideo:hover{
+    color: #3fc5ffc4;
+    transition: 1s;
+   
+}
+/*video*/
+video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.inputs{
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-size: 13px;
+    color: rgba(104, 96, 96, 0.795);
+    display: none;
+}
+.valueOfInputs{
+    margin-bottom: 20px;
+}
+
+/*Верхняя картинка*/
+#imgGreeatingUp{
+    display: none;
+    height: 50px;
+    margin-top: auto;
+    box-shadow: 0px 0px 400px 400px rgba(23, 176, 236, 0.185);
+    border-radius: 50%;
+    -webkit-transition: 2s ease;
+}
+#imgGreeatingUp:hover{
+    box-shadow: 0px 0px 250px 250px rgba(169, 138, 241, 0.322);
+    border-radius: 50%;
+    transition:1s;
+    transition-delay: 0.2s;
+}
+#upImg{
+    margin-top: auto;
+    
+
+}
+footer>div{
+    bottom: 0;
+    margin-top: 150px;
+    width: 100%;
+    height: 30px;
+    
+}
+
